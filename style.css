@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-robo);
+  padding-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --bg-dark: #1F2937;
+  --ff-robo: 'Roboto', sans-serif;
+  --clr-neutral: #F9FAF8;
+  --btn-bg-clr: #3882F6;
+  --clr-grey: #E5E7EB;
+}
+
+.bg__header {
+  background-color: var(--bg-dark);
+}
+
+.bg__hero {
+  background-color: var(--clr-neutral);
+}
+
+.bg-grey {
+  background: var(--clr-grey);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding-left: 400px;
+  padding-right: 400px;
+  gap: 4rem;
+  padding-bottom: 8rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  list-style: none;
+}
+
+.navbar li a{
+  color: var(--clr-grey);
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+}
+
+.navbar li a:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background: var(--btn-bg-clr);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+.navbar li a:hover:before {
+  width: 100%;
+}
+
+header section {
+  display: grid;
+  grid-template-areas: "info image";
+  justify-content: space-between;
+  grid-template-rows: repeat(1, 280px);
+  grid-template-columns: 500px 500px;
+}
+
+header section img {
+  width: 100%;
+  min-width: 200px;
+  height: 100%;
+  object-fit: fill;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__content h1 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: var(--clr-neutral);
+  line-height: 1.2em;
+  margin-bottom: 5px;
+}
+
+.header__content p {
+  color: var(--clr-grey);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+.header__content button {
+  width: 120px;
+  background-color: var(--btn-bg-clr);
+  color: var(--clr-neutral);
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.header__content button:hover {
+  opacity: 0.7;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-neutral);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 80px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  font-weight: bolder;
+  color: var(--bg-dark);
+  margin-bottom: 20px;
+}
+
+.hero__content {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1000px;
+}
+
+.hero__content figure {
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+figure img {
+  width: 150px;
+  height: 150px;
+  border: 4px solid var(--btn-bg-clr);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+
+figcaption {
+  color: black;
+  text-align: center;
+  max-width: 180px;
+  width: 100%;
+  height: 100%;
+  max-height: 72px;
+}
+
+.hero__qoute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4.5rem;
+}
+
+.qoute {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--bg-dark);
+  font-style: italic;
+  width: 100%;
+  max-width: 900px;
+  line-height: 1.2em;
+}
+
+.qoute__name {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero__contact {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+}
+
+.contact__container {
+  background-color: var(--btn-bg-clr);
+  width: 100%;
+  max-width: 1000px;
+  height: 130px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.contact__info h3 {
+  margin-bottom: -3px;
+}
+
+.sign__btn {
+  border: 1px white solid;
+  padding: 3px 30px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.sign__btn:hover {
+  font-weight: bolder;
+}
+
+.footer {
+ padding: 1.8rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+@media (min-width: 2000px) {
+  header {
+    padding-left: 600px;
+    padding-right: 600px;
+  }
+}
+
